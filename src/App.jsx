@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import queryString from 'query-string'
 
-import "./App.sass";
+import "./App.css";
 import "./output.css";
 
 import { API_URI } from "./config";
