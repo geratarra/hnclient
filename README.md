@@ -27,6 +27,8 @@
 > - gh-pages
 > - Tailwind CSS
 > - readme-mg-generator
+> - http://www.heropatterns.com/
+> - https://hatchful.shopify.com/
 
 ### 🏠 [Homepage](https://geratarra.github.io/hnclient)
 
