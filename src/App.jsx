@@ -26,8 +26,10 @@ function App() {
     const [comments, setComments] = useState(undefined);
 
     const getNews = (url) => {
+        console.log(url);
+        
         axios
-            .get(url)
+            .get(url, { headers: { "Access-Control-Allow-Origin": "*" }})
             .then(response => {
                 if (response && response.status === 200) {
                     setNews(response.data);
@@ -42,7 +44,7 @@ function App() {
 
     const getComments = (url) => {
         axios
-            .get(url)
+            .get(url, { headers: { "Access-Control-Allow-Origin": "*" }})
             .then(response => {
                 if (response && response.status === 200) {
                     setComments(response.data);
