@@ -26,10 +26,8 @@ function App() {
     const [comments, setComments] = useState(undefined);
 
     const getNews = (url) => {
-        console.log(url);
-        
         axios
-            .get(url, { headers: { "Access-Control-Allow-Origin": "*" }})
+            .get(url)
             .then(response => {
                 if (response && response.status === 200) {
                     setNews(response.data);
@@ -44,7 +42,7 @@ function App() {
 
     const getComments = (url) => {
         axios
-            .get(url, { headers: { "Access-Control-Allow-Origin": "*" }})
+            .get(url)
             .then(response => {
                 if (response && response.status === 200) {
                     setComments(response.data);
@@ -82,14 +80,14 @@ function App() {
     };
 
     const handleCommentsClick = (props) => {
-        const id = props.location.pathname.slice(1);
+        const splittedPathname = props.location.pathname.split('/');
+        const id = splittedPathname[splittedPathname.length - 1];
         if (id !== previousItemId) {
             previousItemId = id;
             setComments(undefined);
             getComments(API_URI + 'item/' + id + '.json');
         }
         
-
         if (comments === undefined) {
             return <div><p>Loading...</p></div>
         } else if (comments === null) {
@@ -109,10 +107,13 @@ function App() {
                 <Router>
                     <Switch>
                         <Route exact path="/">
-                            <Redirect to="/news?p=1" />
+                            <Redirect to="/hnclient/news?p=1" />
                         </Route>
-                        <Route path='/news' render={(props) => handlePathMatch(props)} />
-                        <Route path='/:id' render={(props) => handleCommentsClick(props)}></Route>
+                        <Route exact path="/hnclient">
+                            <Redirect to="/hnclient/news?p=1" />
+                        </Route>
+                        <Route path='/hnclient/news' render={(props) => handlePathMatch(props)} />
+                        <Route path='/hnclient/:id' render={(props) => handleCommentsClick(props)}></Route>
                     </Switch>
                 </Router>
             </main>

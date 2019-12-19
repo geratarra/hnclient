@@ -12,7 +12,7 @@ const List = props => {
 
         return (
             <span onClick={handleMoreClick}>
-                <Link to={'/news?p=' + (props.currentPage ? props.currentPage + 1 : 2)}>More</Link>
+                <Link to={'/hnclient/news?p=' + (props.currentPage ? props.currentPage + 1 : 2)}>More</Link>
             </span>
         )
     };
@@ -29,7 +29,7 @@ const List = props => {
                         <span>{item.points} points</span>&nbsp;
                         <span>by {item.user}</span>&nbsp;
                         <span>{item.time_ago}</span>&nbsp;
-                        |&nbsp;{item.comments_count ? <Link to={'/' + item.id}>{item.comments_count} comments</Link> : <span>0 comments</span>}
+                        |&nbsp;{item.comments_count ? <Link to={'/hnclient/' + item.id}>{item.comments_count} comments</Link> : <span>0 comments</span>}
                     </p>
                 </div>
             )}
