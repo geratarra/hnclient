@@ -18,7 +18,7 @@
 > Hacker News client app.
 > 
 > In a previous repo I created, I mentioned I was going to be
-> building a series of simple apps to practice coding in the so loved ReactJS library. This is the second of those apps.
+> building a series of simple apps to practice coding with the so loved ReactJS library. This is the second of those apps.
 >
 > Stuff I used to build this little toy:
 > - ReactJS (create-react-app)
@@ -30,7 +30,7 @@
 > - http://www.heropatterns.com/
 > - https://hatchful.shopify.com/
 
-### 🏠 [Homepage](https://geratarra.github.io/hnclient)
+### 🏠 [Demo](https://geratarra.github.io/hnclient)
 
 ## Install
 
